@@ -14,7 +14,7 @@ go run main.go --ingredients=tomatoes,eggs,pasta --numberOfRecipes=5
 ```
 
 ### Database design:
-<img src="./Recipe-Finder/db/DB-design.jpg">
+<img src="./db/DB-design.jpg">
 
 ### Don't forget to:
 - add your API_KEY in ...
