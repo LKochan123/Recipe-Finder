@@ -19,7 +19,7 @@ SPOONACULAR_API_KEY = "xxx"
 ./recipeFinder --ingredients=tomatoes,eggs,pasta --numberOfRecipes=5
 ```
 
-### Don't forget to:
+### It can be helpful to:
 - install SQLite viewer extension (available for VisualStudio) to see data in database file.
 
 ### Database design:
