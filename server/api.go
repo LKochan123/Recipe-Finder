@@ -4,11 +4,28 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"log"
 	"net/http"
+	"os"
+
+	"github.com/joho/godotenv"
 )
 
-const API_KEY string = "ff208f4721f04475be5d6a577ee6100a"
 const BASE_URL string = "https://api.spoonacular.com/recipes"
+var API_KEY string
+
+func InitApiKey() {
+	err := godotenv.Load()
+	if err != nil {
+	  log.Fatal("Error loading .env file")
+	}
+
+	API_KEY = os.Getenv("SPOONACULAR_API_KEY")
+	
+	if API_KEY == "" {
+        fmt.Println("API key is not set.")
+    }
+}
 
 func FetchRecipes(ingredients string, recipesNumber int) ([]Recipe, error) {
 	FULL_URL := fmt.Sprintf("%s/findByIngredients?ingredients=%s&number=%d&ranking=2&apiKey=%s", BASE_URL, ingredients, recipesNumber, API_KEY)

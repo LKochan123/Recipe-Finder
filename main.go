@@ -6,10 +6,11 @@ import (
 	"recipeFinder/server"
 )
 
-func main() {
+func main() {	
+	var results []server.RecipeDetails
+	server.InitApiKey()
 	db.InitDB()
 	db.CreateTables()
-	var results []server.RecipeDetails
 
 	ingredients, recipesNumber, flagsErr := server.ParseFlags()
 	if server.HandleError(flagsErr, "Failed to parse flags") {
