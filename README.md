@@ -13,10 +13,10 @@ Clone the repository and run one of these commands:
 go run main.go --ingredients=tomatoes,eggs,pasta --numberOfRecipes=5
 ```
 
-### Database design:
-<img src="./Recipe-Finder/db/DB-design.jpg">
-
 ### Don't forget to:
 - add your API_KEY in ...
 - have GO installed on your computer
 - install SQLite viewer extension (available for VisualStudio) to see data in database file.
+
+### Database design:
+<img src="./db/DB-design.jpg">
