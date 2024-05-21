@@ -7,7 +7,7 @@ import (
 func CreateTables() {
 	createUserIngrediensTable()
 	createRecipesTable()
-	createNurtritionTable()
+	createNutritionTable()
 	createMissingIngredientsTable()
 	createUsedIngredientsTable()
 }
@@ -34,9 +34,9 @@ func createRecipesTable() {
 	statement.Exec()
 }
 
-func createNurtritionTable() {
+func createNutritionTable() {
 	statement, _ := DB.Prepare(`
-    CREATE TABLE IF NOT EXISTS Nurtritions (
+    CREATE TABLE IF NOT EXISTS Nutritions (
         ID INTEGER PRIMARY KEY,
         Calories TEXT,
         Carbs TEXT,

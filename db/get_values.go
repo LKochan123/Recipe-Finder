@@ -31,7 +31,7 @@ func GetResponse(ingredients string) ([]server.RecipeDetails, int) {
             continue
         }
 
-		calories, carbs, proteins := getNurtrionByRecipeID(recipeID)
+		calories, carbs, proteins := getNutrionByRecipeID(recipeID)
         recipe.NutritionData = server.Nutrition{Calories: calories, Carbs: carbs, Protein: proteins}
 
 		recipe.MissedIngredients = getIngredientsByRecipeID(recipeID, "MissedIngredients")
@@ -53,10 +53,10 @@ func getUserIngredientsID(ingredients string) (int64, int) {
 	return id, number
 }
 
-func getNurtrionByRecipeID(recipeID int) (string, string, string) {
+func getNutrionByRecipeID(recipeID int) (string, string, string) {
 	var calories, carbs, proteins string
 
-	query := "SELECT Calories, Carbs, Proteins FROM Nurtritions WHERE RecipeID = ?"
+	query := "SELECT Calories, Carbs, Proteins FROM Nutritions WHERE RecipeID = ?"
 	DB.QueryRow(query, recipeID).Scan(&calories, &carbs, &proteins)
 
 	return calories, carbs, proteins

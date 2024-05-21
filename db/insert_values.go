@@ -14,7 +14,7 @@ func SaveResponse(response []server.RecipeDetails, ingredients string, numberOfR
 		missedIngredients, usedIngredients := recipe.MissedIngredients, recipe.UsedIngredients
 		recipeID := insertRecipes(recipe.Title, userIngredientsID)
 
-		insertNurtritions(calories, carbs, proteins, recipeID)
+		insertNutritions(calories, carbs, proteins, recipeID)
 		for _, ingredient := range missedIngredients {
 			insertMissingIngredients(ingredient, recipeID)
 		}
@@ -32,8 +32,8 @@ func insertUserIngredients(ingredients string, numberOfRecipes int) int64 {
 	return insertID
 }
 
-func insertNurtritions(calories string, carbs string, proteins string, recipeID int64) {
-	statement, _ := DB.Prepare("INSERT INTO Nurtritions (Calories, Carbs, Proteins, RecipeID) VALUES (?, ?, ?, ?)")
+func insertNutritions(calories string, carbs string, proteins string, recipeID int64) {
+	statement, _ := DB.Prepare("INSERT INTO Nutritions (Calories, Carbs, Proteins, RecipeID) VALUES (?, ?, ?, ?)")
 	statement.Exec(calories, carbs, proteins, recipeID)
 }
 
