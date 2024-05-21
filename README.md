@@ -8,14 +8,18 @@ The program also has a local SQLlite database in which the data entered by the u
 If the input data is repeated, the program will not make an unnecessary API request.
 
 ### How to run project?
-Clone the repository and run one of these commands:
+1. Clone repository
+2. Create account on [Spooncular API](https://spoonacular.com/food-api/) website and generate your API key
+3. Create an .env file in the root of your project and assign your api key to the variable named below:
 ```bash
-go run main.go --ingredients=tomatoes,eggs,pasta --numberOfRecipes=5
+SPOONACULAR_API_KEY = "xxx"
+```
+4. Run your program (example input):
+```bash
+./recipeFinder --ingredients=tomatoes,eggs,pasta --numberOfRecipes=5
 ```
 
 ### Don't forget to:
-- add your API_KEY in ...
-- have GO installed on your computer
 - install SQLite viewer extension (available for VisualStudio) to see data in database file.
 
 ### Database design:
